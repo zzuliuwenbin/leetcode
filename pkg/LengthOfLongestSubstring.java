@@ -1,6 +1,5 @@
 package pkg;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 
@@ -14,7 +13,7 @@ public class LengthOfLongestSubstring {
 		int len = 0;
 		int tag = 0;
 		char ch = 0;
-		HashSet sub = new HashSet();
+		HashSet<Character> sub = new HashSet<Character>();
 		sub.add(s.charAt(0));
 		for(int i=1;i<s.length();i++) {
 			if(sub.contains(s.charAt(i))) {	//最长子串中包含该字符
