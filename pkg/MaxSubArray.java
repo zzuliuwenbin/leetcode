@@ -4,6 +4,7 @@ public class MaxSubArray {
 
 	public int maxSubArray(int[] nums) {
 		//test
+		//test2
 		return 0; 
     }
 
