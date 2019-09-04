@@ -16,6 +16,11 @@ public class ClimbStairs {
 		}
 		return (int)(t1/t2);
 	}
+	/**
+	 * 思路一：排列组合
+	 * 1、n个台阶，一次走两个台阶的地方最多有n/2个；
+	 * 2、假如某种可能里面包含i个一次走两个台阶的走法，那么这种走法就是在n-i步里面找到i个一次走俩台阶的，用组合公式C(i,n-i)；
+	 * */
 	public int climbStairs(int n) {
 		int sum = 0;
 		for(int i=0;i<=n/2;i++) {
@@ -27,6 +32,24 @@ public class ClimbStairs {
 			
 		}
         return sum;
+    }
+	
+	/**
+	 * 思路二：动态规划
+	 * 第n个台阶，要么走，要么不走，设dp[n]表示走到n的走法
+	 * 那么dp[n]=dp[n-1](一步走到n)+dp[n-2]（两步走到n），只有两种走法
+	 * */
+	public int dp(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n];
     }
 
 	public static void main(String[] args) {
