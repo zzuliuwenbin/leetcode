@@ -8,7 +8,6 @@ public class LengthOfLongestSubstring {
 		if(s.length()<=1) {
 			return s.length();
 		}
-		
 		int t1 = 0;//当前开始计数位置，如果有重复的，从此处开始移除hash中的字符，直到遇到相同的值
 		int len = 0;
 		int tag = 0;
@@ -45,7 +44,6 @@ public class LengthOfLongestSubstring {
 		// TODO Auto-generated method stub
 		LengthOfLongestSubstring test = new LengthOfLongestSubstring();
 		System.out.println(test.lengthOfLongestSubstring("aab"));
-
 	}
 
 }
